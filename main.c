@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:29:50 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/07 15:57:24 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:09:16 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ size_t	ft_strlen(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
+int		ft_isascii(int c);
 
 int		main(int argc, char **argv)
 {
@@ -31,6 +32,7 @@ int		main(int argc, char **argv)
 	printf("ft_isdigit: %d\n\n", ft_isdigit(argv[1][0]));
 	printf("isalnum:    %d\n", isalnum(argv[1][0]));
 	printf("ft_isalnum: %d\n\n", ft_isalnum(argv[1][0]));
-
+	printf("isascii:    %d\n", isascii(argv[1][0]));
+	printf("ft_isascii: %d\n\n", ft_isascii(argv[1][0]));
 	return (0);
 }
