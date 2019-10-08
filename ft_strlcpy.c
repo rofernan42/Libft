@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/06 15:34:16 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 12:13:57 by rofernan         ###   ########.fr       */
+/*   Created: 2019/07/05 10:52:13 by rofernan          #+#    #+#             */
+/*   Updated: 2019/10/08 12:13:41 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t	ft_strlen(const char *str);
-
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	unsigned int i;
 	unsigned int j;
 
 	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (dest[i] != '\0' && i < size)
+	j = 0;
+	while (src[i])
 		i++;
-	j = i;
-	while (src[i - j] != '\0' && i < size - 1)
+	if (!dest || !src)
+		return (0);
+	while (src[j] && j < size - 1 && size > 0)
 	{
-		dest[i] = src[i - j];
-		i++;
+		dest[j] = src[j];
+		j++;
 	}
-	if (j < size)
-		dest[i] = '\0';
-	return (ft_strlen(src) + j);
+	if (size > 0)
+		dest[j] = '\0';
+	return (i);
 }

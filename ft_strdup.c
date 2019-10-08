@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/06 15:34:16 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 12:13:57 by rofernan         ###   ########.fr       */
+/*   Created: 2019/07/11 10:36:06 by rofernan          #+#    #+#             */
+/*   Updated: 2019/10/08 12:22:17 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 
-size_t	ft_strlen(const char *str);
-
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+char	*ft_strdup(const char *src)
 {
-	unsigned int i;
-	unsigned int j;
+	char	*dest;
+	int		i;
+	int		j;
 
 	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (dest[i] != '\0' && i < size)
-		i++;
-	j = i;
-	while (src[i - j] != '\0' && i < size - 1)
+	j = 0;
+	while (src[j])
+		j++;
+	dest = malloc(sizeof(*dest) * (j + 1));
+	if (!dest)
+		return (NULL);
+	while (i < j)
 	{
-		dest[i] = src[i - j];
+		dest[i] = src[i];
 		i++;
 	}
-	if (j < size)
-		dest[i] = '\0';
-	return (ft_strlen(src) + j);
+	dest[i] = '\0';
+	return (dest);
 }

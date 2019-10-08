@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/06 15:34:16 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 12:13:57 by rofernan         ###   ########.fr       */
+/*   Created: 2019/10/08 12:25:49 by rofernan          #+#    #+#             */
+/*   Updated: 2019/10/08 13:25:35 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t	ft_strlen(const char *str);
-
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned int i;
-	unsigned int j;
+	int		i;
+	char	*temp;
 
 	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (dest[i] != '\0' && i < size)
-		i++;
-	j = i;
-	while (src[i - j] != '\0' && i < size - 1)
+	temp = (char *)str;
+	while (i < len)
 	{
-		dest[i] = src[i - j];
+		temp[i] = c;
 		i++;
 	}
-	if (j < size)
-		dest[i] = '\0';
-	return (ft_strlen(src) + j);
+	return (str);
 }
