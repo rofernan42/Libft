@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 12:25:49 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 16:25:04 by rofernan         ###   ########.fr       */
+/*   Created: 2019/10/08 16:12:25 by rofernan          #+#    #+#             */
+/*   Updated: 2019/10/08 17:00:25 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char *temp_dst;
-	char *temp_src;
+	int		i;
+	char	*tmp;
+	char	*temp_dst;
+	char	*temp_src;
 
+	i = 0;
 	temp_dst = (char *)dst;
 	temp_src = (char *)src;
 	while (n > 0)
 	{
-		*temp_dst++ = *temp_src++;
+		tmp[i] = temp_src[i];
+		temp_dst[i] = tmp[i];
+		i++;
 		n--;
 	}
 	return (dst);

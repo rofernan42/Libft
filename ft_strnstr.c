@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 12:25:49 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 16:25:04 by rofernan         ###   ########.fr       */
+/*   Created: 2019/07/05 14:40:33 by rofernan          #+#    #+#             */
+/*   Updated: 2019/10/08 15:09:03 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	char *temp_dst;
-	char *temp_src;
+	int i;
+	int j;
 
-	temp_dst = (char *)dst;
-	temp_src = (char *)src;
-	while (n > 0)
+	i = 0;
+	j = 0;
+	if (!str[0] && !to_find[0])
+		return ((char *)str);
+	while (i < len)
 	{
-		*temp_dst++ = *temp_src++;
-		n--;
+		while (to_find[j] && to_find[j] == str[i + j] && (i + j) < len)
+			j++;
+		if (!to_find[j])
+			return ((char *)&str[i]);
+		i++;
+		j = 0;
 	}
-	return (dst);
+	return (0);
 }

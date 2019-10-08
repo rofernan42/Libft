@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 12:25:49 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 16:25:04 by rofernan         ###   ########.fr       */
+/*   Created: 2019/10/08 17:01:28 by rofernan          #+#    #+#             */
+/*   Updated: 2019/10/08 17:17:36 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char *temp_dst;
-	char *temp_src;
+	char *temp1;
+	char *temp2;
 
-	temp_dst = (char *)dst;
-	temp_src = (char *)src;
-	while (n > 0)
+	temp1 = (char *)s1;
+	temp2 = (char *)s2;
+	if (n == 0)
+		return (0);
+	while (*temp1 && *temp2 && *temp1 == *temp2 && n > 1)
 	{
-		*temp_dst++ = *temp_src++;
+		temp1++;
+		temp2++;
 		n--;
 	}
-	return (dst);
+	return (*temp1 - *temp2);
 }
