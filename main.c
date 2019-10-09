@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:29:50 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/09 13:00:38 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/09 14:41:24 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int	check_c(char to_check, char c);
 int	new_block(char prev, char curr, char c);
 int	nb_blocks(char const *s, char c);
 int	*size_blocks(char const *s, char c);
+
+int	size_str(int n);
+char	*fill_str(int n, int len, char *str);
+
 
 int		main(int argc, char **argv)
 {
@@ -91,7 +95,7 @@ int		main(int argc, char **argv)
 	// ft_putendl_fd(argv[1], atoi(argv[2]));
 	// ft_putendl_fd(argv[1], atoi(argv[2]));
 	// ft_putnbr_fd(atoi(argv[1]), atoi(argv[2]));
-	 int i = 0;
+	// int i = 0;
 	// printf("nb blocks: %d\n", nb_blocks(argv[1], argv[2][0]));
 	// while (i < nb_blocks(argv[1], argv[2][0]))
 	// {
@@ -99,10 +103,14 @@ int		main(int argc, char **argv)
 	// 	i++;
 	// }
 	// i = 0;
-	while (ft_split(argv[1], argv[2][0])[i])
-	{
-		printf("%s\n", ft_split(argv[1], argv[2][0])[i]);
-		i++;
-	}
+	// while (ft_split(argv[1], argv[2][0])[i])
+	// {
+	// 	printf("%s\n", ft_split(argv[1], argv[2][0])[i]);
+	// 	i++;
+	// }
+	// printf("%s\n", ft_split(argv[1], argv[2][0])[i]);
+
+	printf("%s\n\n", ft_itoa(atoi(argv[1])));
+
 	return (0);
 }

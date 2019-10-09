@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:25:58 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/09 12:52:14 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/09 15:08:31 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_strdup(const char *src);
 //strjoin;
 //strtrim;
 char	**ft_split(char const *s, char c);
-//itoa;
+char	*ft_itoa(int n);
 //strmapi;
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
