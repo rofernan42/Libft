@@ -6,27 +6,27 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 17:55:58 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/09 12:52:57 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/09 12:59:26 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		check_c(char to_check, char c)
+static	int		check_c(char to_check, char c)
 {
 	if (to_check == c)
 		return (1);
 	return (0);
 }
 
-int		new_block(char prev, char curr, char c)
+static	int		new_block(char prev, char curr, char c)
 {
 	if (check_c(prev, c) && !check_c(curr, c))
 		return (1);
 	return (0);
 }
 
-int		nb_blocks(char const *s, char c)
+static	int		nb_blocks(char const *s, char c)
 {
 	int nb;
 	int i;
@@ -42,7 +42,7 @@ int		nb_blocks(char const *s, char c)
 	return (nb);
 }
 
-int		*size_blocks(char const *s, char c)
+static	int		*size_blocks(char const *s, char c)
 {
 	int *tab;
 	int i;
@@ -66,7 +66,7 @@ int		*size_blocks(char const *s, char c)
 	return (tab);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;

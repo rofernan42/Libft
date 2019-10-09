@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:29:50 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/09 12:45:51 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/09 13:00:38 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,15 +91,15 @@ int		main(int argc, char **argv)
 	// ft_putendl_fd(argv[1], atoi(argv[2]));
 	// ft_putendl_fd(argv[1], atoi(argv[2]));
 	// ft_putnbr_fd(atoi(argv[1]), atoi(argv[2]));
-	int i = 0;
-	printf("nb blocks: %d\n", nb_blocks(argv[1], argv[2][0]));
-	while (i < nb_blocks(argv[1], argv[2][0]))
-	{
-		printf("%d\n", size_blocks(argv[1], argv[2][0])[i]);
-		i++;
-	}
-	i = 0;
-	while (i <= nb_blocks(argv[1], argv[2][0]))
+	 int i = 0;
+	// printf("nb blocks: %d\n", nb_blocks(argv[1], argv[2][0]));
+	// while (i < nb_blocks(argv[1], argv[2][0]))
+	// {
+	// 	printf("%d\n", size_blocks(argv[1], argv[2][0])[i]);
+	// 	i++;
+	// }
+	// i = 0;
+	while (ft_split(argv[1], argv[2][0])[i])
 	{
 		printf("%s\n", ft_split(argv[1], argv[2][0])[i]);
 		i++;
