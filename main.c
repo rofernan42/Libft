@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:29:50 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/09 14:41:24 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/09 18:09:22 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,12 @@ int		main(int argc, char **argv)
 //	printf("memcpy:    %s\n", memcpy(argv[1], argv[2], atoi(argv[3])));
 //	printf("ft_memcpy: %s\n\n", ft_memcpy(argv[1], argv[2], atoi(argv[3])));
 
+	// printf("memccpy:    %s\n", memccpy(argv[1], argv[2], atoi(argv[3]), atoi(argv[4])));
+	// printf("%s\n\n", argv[1]);
+	// printf("ft_memccpy: %s\n", ft_memccpy(argv[1], argv[2], atoi(argv[3]), atoi(argv[4])));
+	// printf("%s\n\n", argv[1]);
+
+
 //	printf("memmove:    %s\n", memmove(argv[1], argv[2], atoi(argv[3])));
 //	printf("ft_memmove: %s\n\n", ft_memmove(argv[1], argv[2], atoi(argv[3])));
 
@@ -110,7 +116,9 @@ int		main(int argc, char **argv)
 	// }
 	// printf("%s\n", ft_split(argv[1], argv[2][0])[i]);
 
-	printf("%s\n\n", ft_itoa(atoi(argv[1])));
+	// printf("%s\n\n", ft_itoa(atoi(argv[1])));
+
+	printf("ft_strtrim:    %s\n", ft_strtrim(argv[1], argv[2]));
 
 	return (0);
 }

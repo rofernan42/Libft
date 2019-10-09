@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 17:42:24 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/09 16:33:33 by rofernan         ###   ########.fr       */
+/*   Created: 2019/10/09 17:09:28 by rofernan          #+#    #+#             */
+/*   Updated: 2019/10/09 18:31:07 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putnbr_fd(int n, int fd)
+static	int	check_set(char c, char const *set)
 {
-	unsigned int temp;
+	while (*set)
+	{
+		if (*set == c)
+			return (1);
+		set++;
+	}
+	return (0);
+}
 
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		temp = -n;
-	}
-	else
-		temp = n;
-	if (temp < 10)
-		ft_putchar_fd(temp + '0', fd);
-	else
-	{
-		ft_putnbr_fd(temp / 10, fd);
-		ft_putchar_fd(temp % 10 + '0', fd);
-	}
+char		*ft_strtrim(char const *s1, char const *set)
+{
+	int		i;
+	int		j;
+	char	*str;
+
+	i = 0;
+	j = 0;
+	str = ft_strdup(s1);
+	while (check_set(s1[i], set))
+		i++;
+	while (s1[i])
+		str[j++] = s1[i++];
+	while (check_set(str[j - 1], set))
+		j--;
+	str[j] = '\0';
+	return (str);
 }

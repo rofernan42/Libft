@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 17:42:24 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/09 16:33:33 by rofernan         ###   ########.fr       */
+/*   Created: 2019/10/08 12:25:49 by rofernan          #+#    #+#             */
+/*   Updated: 2019/10/09 16:39:00 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_putnbr_fd(int n, int fd)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned int temp;
+	size_t	i;
+	char	*temp_dst;
+	char	*temp_src;
 
-	if (n < 0)
+	i = 0;
+	temp_dst = (char *)dst;
+	temp_src = (char *)src;
+	while (i < n)
 	{
-		ft_putchar_fd('-', fd);
-		temp = -n;
+		temp_dst[i] = temp_src[i];
+		if (temp_src[i] == c)
+		{
+			temp_dst[i] = temp_src[i];
+			return (&temp_dst[i + 1]);
+		}
+		i++;
 	}
-	else
-		temp = n;
-	if (temp < 10)
-		ft_putchar_fd(temp + '0', fd);
-	else
-	{
-		ft_putnbr_fd(temp / 10, fd);
-		ft_putchar_fd(temp % 10 + '0', fd);
-	}
+	return (0);
 }

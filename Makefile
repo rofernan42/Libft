@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/09 13:26:04 by rofernan          #+#    #+#              #
-#    Updated: 2019/10/09 13:33:27 by rofernan         ###   ########.fr        #
+#    Updated: 2019/10/09 15:23:27 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,12 +34,24 @@ SRCS		=	ft_memset.c \
 				ft_strlcat.c \
 				ft_strnstr.c \
 				ft_atoi.c \
+				ft_calloc.c \
+				ft_strdup.c \
+				ft_substr.c \
+				ft_strjoin.c \
+				ft_strtrim.c \
+				ft_split.c \
+				ft_itoa.c \
+				ft_strmapi.c \
+				ft_putchar_fd.c \
+				ft_putstr_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c
 
 OBJS		=	${SRCS:%.c=%.o}
 
 CC			=	gcc
 
-CFLAGS		=	-Wall -Wextra -Werror -I
+CFLAGS		=	-Wall -Wextra -Werror -I./includes
 
 RM			=	rm -f
 
