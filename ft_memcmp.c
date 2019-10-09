@@ -6,11 +6,11 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 17:01:28 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 17:17:36 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/09 12:35:30 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 10:52:13 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 12:13:41 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/09 12:36:26 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

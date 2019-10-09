@@ -6,11 +6,11 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 10:36:06 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 12:22:17 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/09 12:36:18 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {

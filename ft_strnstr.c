@@ -6,16 +6,16 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 14:40:33 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 15:09:03 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/09 12:50:46 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	int i;
-	int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;

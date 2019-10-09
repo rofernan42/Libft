@@ -6,13 +6,11 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 17:42:24 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/08 17:54:12 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/09 12:37:04 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
