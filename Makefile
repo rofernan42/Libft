@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/09 13:26:04 by rofernan          #+#    #+#              #
-#    Updated: 2019/10/10 18:18:46 by rofernan         ###   ########.fr        #
+#    Updated: 2019/10/10 18:38:20 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ SRCS		=	ft_memset.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c
 
-SRCS_BONUS		=	ft_lstnew_bonus.c \
+SRCS_BONUS	=	ft_lstnew_bonus.c \
 				ft_lstadd_front_bonus \
 				ft_lstsize_bonus.c \
 				ft_lstlast_bonus.c \
