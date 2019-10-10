@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 10:36:06 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/09 17:52:49 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/10 14:20:06 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *src)
 	while (src[len])
 		len++;
 	if (!(dest = malloc(sizeof(*dest) * (len + 1))))
-		return (0);
+		return (NULL);
 	while (i < len)
 	{
 		dest[i] = src[i];
