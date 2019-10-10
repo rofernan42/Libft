@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 14:00:25 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/10 14:28:01 by rofernan         ###   ########.fr       */
+/*   Created: 2019/10/10 16:58:34 by rofernan          #+#    #+#             */
+/*   Updated: 2019/10/10 17:12:00 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "bonus.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(void *))
 {
-	int		i;
-	char	*dest;
+	t_list *new_lst;
+	t_list *tmp;
 
-	i = 0;
-	if (!s || !(dest = malloc(sizeof(char *) * (ft_strlen(s) + 1))))
-		return (NULL);
-	while (s[i])
-	{
-		dest[i] = f(i, s[i]);
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	tmp = lst;
+	return (new_lst);
 }

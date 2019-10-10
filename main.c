@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:29:50 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/10 13:46:07 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/10 14:30:11 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ int	*size_blocks(char const *s, char c);
 int	size_str(int n);
 char	*fill_str(int n, int len, char *str);
 
+char f(unsigned int i, char c)
+{
+
+	return (c + i);
+}
 
 int		main(int argc, char **argv)
 {
@@ -122,8 +127,9 @@ int		main(int argc, char **argv)
 
 	// printf("ft_substr:    %s\n", ft_substr(argv[1], atoi(argv[2]), atoi(argv[3])));
 
-	printf("ft_strjoin:    %s\n", ft_strjoin(argv[1], argv[2]));
-
+	// printf("ft_strjoin:    %s\n", ft_strjoin(argv[1], argv[2]));
+	
+	printf("ft_strmapi:    %s\n", ft_strmapi(argv[1], f));
 
 	return (0);
 }

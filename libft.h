@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:25:58 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/10 14:19:21 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/10 14:51:12 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 char	*ft_strnstr(const char *str, const char *to_find, size_t len);
 int		ft_atoi(const char *str);
-//calloc;
+void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
