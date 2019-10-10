@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:29:50 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/09 18:09:22 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/10 13:46:07 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,12 @@ int		main(int argc, char **argv)
 
 	// printf("%s\n\n", ft_itoa(atoi(argv[1])));
 
-	printf("ft_strtrim:    %s\n", ft_strtrim(argv[1], argv[2]));
+	// printf("ft_strtrim:    %s\n", ft_strtrim(argv[1], argv[2]));
+
+	// printf("ft_substr:    %s\n", ft_substr(argv[1], atoi(argv[2]), atoi(argv[3])));
+
+	printf("ft_strjoin:    %s\n", ft_strjoin(argv[1], argv[2]));
+
 
 	return (0);
 }
