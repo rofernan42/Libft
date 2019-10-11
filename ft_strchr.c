@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:41:58 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/10 10:42:05 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/11 11:08:14 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@ char	*ft_strchr(const char *str, int c)
 	int i;
 
 	i = 0;
-	if (c == 0)
-		return ("\0");
 	while (str[i])
 	{
 		if (str[i] == c)
@@ -24,5 +22,7 @@ char	*ft_strchr(const char *str, int c)
 		else
 			i++;
 	}
+	if (c == 0)
+		return ((char *)&str[i]);
 	return (0);
 }

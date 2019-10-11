@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/09 13:26:04 by rofernan          #+#    #+#              #
-#    Updated: 2019/10/11 09:48:37 by rofernan         ###   ########.fr        #
+#    Updated: 2019/10/11 11:12:47 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ OBJS_BONUS	=	${SRCS_BONUS:%.c=%.o}
 
 CC			=	gcc
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -I./includes
 
 RM			=	rm -f
 
