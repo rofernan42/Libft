@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:20:33 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/10 18:10:08 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/11 17:21:43 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list *list;
 
-	if (!(list = malloc(sizeof(t_list))))
+	if (!(list = malloc(sizeof(*list))))
 		return (NULL);
 	list->content = content;
 	list->next = NULL;
