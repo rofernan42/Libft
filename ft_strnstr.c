@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 14:40:33 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/09 12:50:46 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/11 11:41:40 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 	i = 0;
 	j = 0;
-	if (!str[0] && !to_find[0])
+	if ((!str && !to_find) || !len)
 		return ((char *)str);
 	while (i < len)
 	{

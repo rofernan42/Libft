@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 17:55:58 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/10 14:18:39 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/11 13:13:25 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char			**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!(dest = malloc(sizeof(dest) * (nb_blocks(s, c) + 1))))
+	if (!s || !(dest = malloc(sizeof(dest) * (nb_blocks(s, c) + 1))))
 		return (NULL);
 	while (j < nb_blocks(s, c))
 	{
