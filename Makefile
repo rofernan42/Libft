@@ -6,13 +6,11 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/09 13:26:04 by rofernan          #+#    #+#              #
-#    Updated: 2019/10/11 11:12:47 by rofernan         ###   ########.fr        #
+#    Updated: 2019/10/11 14:30:06 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libft.a
-
-BONUS		=	libft_bonus.a
 
 SRCS		=	ft_memset.c \
 				ft_bzero.c \
@@ -59,6 +57,8 @@ SRCS_BONUS	=	ft_lstnew_bonus.c \
 				ft_lstiter_bonus.c \
 				ft_lstmap_bonus.c
 
+HEADERS		=	libft.h
+
 OBJS		=	${SRCS:%.c=%.o}
 
 OBJS_BONUS	=	${SRCS_BONUS:%.c=%.o}
@@ -73,19 +73,17 @@ ${NAME}:	${OBJS}
 			ar rc ${NAME} ${OBJS}
 			ranlib ${NAME}
 
-${BONUS}:	${OBJS_BONUS}
-			ar rc ${BONUS} ${OBJS_BONUS}
-			ranlib ${BONUS}
-
 all:		${NAME}
 
-bonus:		${BONUS}
+bonus:		${OBJS} ${OBJS_BONUS}
+			ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
+			ranlib ${NAME}
 
 clean:		
 			${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean:		clean
-			${RM} ${NAME} ${BONUS}
+			${RM} ${NAME}
 
 re:			fclean all bonus
 
