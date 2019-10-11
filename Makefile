@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/09 13:26:04 by rofernan          #+#    #+#              #
-#    Updated: 2019/10/11 14:30:06 by rofernan         ###   ########.fr        #
+#    Updated: 2019/10/11 14:45:01 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ clean:
 			${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean:		clean
-			${RM} ${NAME}
+			${RM} ${NAME} bonus
 
 re:			fclean all bonus
 

@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/05 10:52:13 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/11 12:31:57 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/11 15:13:00 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	if (!dest || !src || !size)
+	if (!dest || !src)
 		return (0);
 	while (src[i])
 		i++;
+	if (!size)
+		return (i);
 	while (src[j] && j < size - 1 && size > 0)
 	{
 		dest[j] = src[j];
