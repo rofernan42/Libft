@@ -6,15 +6,15 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:19:30 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/11 13:25:58 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/14 11:00:05 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	nb;
-	int	sign;
+	int			i;
+	long int	nb;
+	int			sign;
 
 	i = 0;
 	nb = 0;
