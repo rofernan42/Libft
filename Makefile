@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/09 13:26:04 by rofernan          #+#    #+#              #
-#    Updated: 2019/10/14 12:20:16 by rofernan         ###   ########.fr        #
+#    Updated: 2019/10/14 13:50:05 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ SRCS		=	ft_memset.c \
 				ft_putchar_fd.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
-				ft_putnbr_fd.c
+				ft_putnbr_fd.c \
 
 SRCS_BONUS	=	ft_lstnew_bonus.c \
 				ft_lstadd_front_bonus.c \
@@ -55,7 +55,7 @@ SRCS_BONUS	=	ft_lstnew_bonus.c \
 				ft_lstdelone_bonus.c \
 				ft_lstclear_bonus.c \
 				ft_lstiter_bonus.c \
-				ft_lstmap_bonus.c
+				ft_lstmap_bonus.c \
 
 HEADERS		=	libft.h
 
@@ -65,11 +65,12 @@ OBJS_BONUS	=	${SRCS_BONUS:%.c=%.o}
 
 CC			=	gcc
 
-CFLAGS		=	-Wall -Wextra -Werror -I./includes
+CFLAGS		=	-Wall -Wextra -Werror -I./
 
 RM			=	rm -f
 
-${NAME}:	${OBJS}
+${NAME}:	libft.h
+			${CC} ${CFLAGS} -c ${SRCS}
 			ar rc ${NAME} ${OBJS}
 			ranlib ${NAME}
 
@@ -85,6 +86,6 @@ clean:
 fclean:		clean
 			${RM} ${NAME} bonus
 
-re:			fclean all bonus
+re:			fclean all
 
 .PHONY:		all bonus clean fclean re
