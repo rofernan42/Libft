@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 16:12:25 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/14 16:26:22 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/15 11:08:45 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,19 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	char	*tmp_dst;
 	size_t	i;
 
-	i = -1;
+	i = 0;
+	if (!dst && !src)
+		return (0);
 	tmp_src = (char *)src;
 	tmp_dst = (char *)dst;
 	if (tmp_src < tmp_dst)
-		while ((int)(--n) >= 0)
-			*(tmp_dst + n) = *(tmp_src + n);
+		while (--n >= 0)
+			tmp_dst[n] = tmp_src[n];
 	else
-		while (++i < n)
-			*(tmp_dst + i) = *(tmp_src + i);
+		while (i < n)
+		{
+			tmp_dst[i] = tmp_src[i];
+			i++;
+		}
 	return (dst);
 }

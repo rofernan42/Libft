@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 17:09:28 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/15 10:46:08 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/15 10:52:33 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = 0;
 	k = 0;
-	if (!s1[i])
+	if (!s1)
 		return (NULL);
 	while (check_set(s1[i], set))
 		i++;
