@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/15 12:07:06 by juligonz          #+#    #+#              #
-#    Updated: 2019/10/15 09:57:45 by rofernan         ###   ########.fr        #
+#    Updated: 2019/10/15 11:47:30 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,6 @@ clean:
 fclean:			clean
 				rm -f $(NAME) $(NAME_BONUS)
 
-re:				fclean all
+re:				fclean all bonus
 
 .PHONY:			clean fclean re all bonus

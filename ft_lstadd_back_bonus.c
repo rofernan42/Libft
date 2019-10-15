@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:20:33 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/10 18:09:37 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/15 12:33:32 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list *tmp;
 
+	if (!alst)
+		return ;
 	tmp = *alst;
 	while (tmp->next)
 		tmp = tmp->next;
