@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:25:58 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/14 12:59:38 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/15 14:18:30 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_putchar_fd(char c, int fd);
-void			ft_putstr_fd(char const *s, int fd);
-void			ft_putendl_fd(char const *s, int fd);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
 typedef	struct	s_list

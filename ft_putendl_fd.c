@@ -6,13 +6,13 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 17:27:27 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/14 12:13:43 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/15 14:18:15 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)
 		return ;

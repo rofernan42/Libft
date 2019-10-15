@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:58:34 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/14 12:59:09 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/15 14:13:09 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,14 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *))
 {
 	t_list *new_lst;
-	t_list *tmp;
-	t_list *tmp_new;
 
 	if (!lst)
 		return (NULL);
-	tmp = lst;
-	new_lst = ft_lstnew(f(tmp->content));
-	while (tmp)
+	new_lst = ft_lstnew(f(lst->content));
+	while (lst->next)
 	{
-		tmp = tmp->next;
-		new_lst = ft_lstnew(f(tmp->content));
-		tmp_new = tmp_new->next;
+		ft_lstadd_back(&new_lst, ft_lstnew(f(lst->content)));
+		lst = lst->next;
 	}
 	return (new_lst);
 }
