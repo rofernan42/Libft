@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/15 12:07:06 by juligonz          #+#    #+#              #
-#    Updated: 2019/10/15 13:51:34 by rofernan         ###   ########.fr        #
+#    Updated: 2019/10/15 17:32:36 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,8 @@ SRCS_BONUS	=	$(BONUS)
 
 OBJ			=	$(SRCS:.c=.o)
 OBJ_BONUS	=	$(SRCS_BONUS:.c=.o)
+
+CC			=	gcc
 
 CFLAGS		=	-Wall -Wextra -Werror -I./
 
