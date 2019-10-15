@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 17:55:58 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/15 10:20:40 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/10/15 10:24:06 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ static	int		nb_blocks(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		if ((i == 0 && !check_c(s[0], c)) || (i > 0 && new_block(s[i - 1], s[i], c)))
+		if ((i == 0 && !check_c(s[0], c))
+			|| (i > 0 && new_block(s[i - 1], s[i], c)))
 			nb++;
 		i++;
 	}
@@ -75,7 +76,7 @@ char			**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!s[0] || !(dest = malloc(sizeof(dest) * (nb_blocks(s, c) + 1))))
+	if (!s || !(dest = malloc(sizeof(dest) * (nb_blocks(s, c) + 1))))
 		return (NULL);
 	while (j < nb_blocks(s, c))
 	{
