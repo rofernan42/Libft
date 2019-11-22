@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/15 12:07:06 by juligonz          #+#    #+#              #
-#    Updated: 2019/11/22 11:26:57 by rofernan         ###   ########.fr        #
+#    Updated: 2019/11/22 13:39:17 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ PART2				=	ft_substr.c				\
 
 ADDITIONAL			=	ft_strjoin_free.c		\
 						ft_strdel.c				\
+						ft_strndup.c			\
 
 BONUS				=	ft_lstnew_bonus.c		\
 						ft_lstadd_front_bonus.c \

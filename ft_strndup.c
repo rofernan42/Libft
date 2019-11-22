@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 16:58:34 by rofernan          #+#    #+#             */
-/*   Updated: 2019/11/22 14:38:56 by rofernan         ###   ########.fr       */
+/*   Created: 2019/11/22 13:37:38 by rofernan          #+#    #+#             */
+/*   Updated: 2019/11/22 13:55:11 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+char	*ft_strndup(const char *src, size_t n)
 {
-	t_list *new_lst;
+	char	*dest;
+	size_t	i;
+	size_t	len;
 
-	if (!lst)
+	i = 0;
+	len = 0;
+	while (src[len] && len < n)
+		len++;
+	if (!(dest = malloc(sizeof(*dest) * (len + 1))))
 		return (NULL);
-	new_lst = ft_lstnew(f(lst->content));
-	while (lst->next)
+	while (i < len)
 	{
-		ft_lstadd_back(&new_lst, ft_lstnew(f(lst->content)));
-		lst = lst->next;
+		dest[i] = src[i];
+		i++;
 	}
-	return (new_lst);
+	dest[i] = '\0';
+	return (dest);
 }
