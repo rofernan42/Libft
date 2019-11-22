@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 15:45:34 by rofernan          #+#    #+#             */
-/*   Updated: 2019/11/20 10:51:25 by rofernan         ###   ########.fr       */
+/*   Created: 2019/11/22 11:24:34 by rofernan          #+#    #+#             */
+/*   Updated: 2019/11/22 11:25:09 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	ft_strdel(char **str)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	if (!str)
+		return ;
+	free(*str);
+	*str = NULL;
 }

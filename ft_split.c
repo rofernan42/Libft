@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 17:55:58 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/15 10:24:06 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/11/20 12:32:09 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 static	int		check_c(char to_check, char c)
 {
 	if (to_check == c)
-		return (1);
-	return (0);
-}
-
-static	int		new_block(char prev, char curr, char c)
-{
-	if (check_c(prev, c) && !check_c(curr, c))
 		return (1);
 	return (0);
 }
@@ -36,7 +29,7 @@ static	int		nb_blocks(char const *s, char c)
 	while (s[i])
 	{
 		if ((i == 0 && !check_c(s[0], c))
-			|| (i > 0 && new_block(s[i - 1], s[i], c)))
+		|| (i > 0 && check_c(s[i - 1], c) && !check_c(s[i], c)))
 			nb++;
 		i++;
 	}
@@ -72,10 +65,12 @@ char			**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 	int		k;
+	int		*tab;
 	char	**dest;
 
 	i = 0;
 	j = 0;
+	tab = size_blocks(s, c);
 	if (!s || !(dest = malloc(sizeof(dest) * (nb_blocks(s, c) + 1))))
 		return (NULL);
 	while (j < nb_blocks(s, c))
@@ -83,13 +78,13 @@ char			**ft_split(char const *s, char c)
 		k = 0;
 		while (check_c(s[i], c))
 			i++;
-		if (!(dest[j] = malloc(sizeof(*dest) * (size_blocks(s, c)[j] + 1))))
+		if (!(dest[j] = malloc(sizeof(*dest) * (tab[j] + 1))))
 			return (NULL);
-		while (k < size_blocks(s, c)[j])
+		while (k < tab[j])
 			dest[j][k++] = s[i++];
-		dest[j][k] = '\0';
-		j++;
+		dest[j++][k] = '\0';
 	}
 	dest[j] = NULL;
+	free(tab);
 	return (dest);
 }

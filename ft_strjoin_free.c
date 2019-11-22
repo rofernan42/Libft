@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 16:58:34 by rofernan          #+#    #+#             */
-/*   Updated: 2019/11/22 12:46:00 by rofernan         ###   ########.fr       */
+/*   Created: 2019/11/20 14:38:20 by rofernan          #+#    #+#             */
+/*   Updated: 2019/11/20 14:39:45 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+char	*ft_strjoin_free(char const *s1, char const *s2, int param)
 {
-	t_list *new_lst;
+	int		i;
+	int		j;
+	char	*dest;
 
-	if (!lst)
+	i = 0;
+	j = 0;
+	if (!s1 || !s2
+	|| !(dest = malloc(sizeof(*dest) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
 		return (NULL);
-	new_lst = ft_lstnew(f(lst->content));
-	while (lst->next)
+	while (s1[j])
+		dest[i++] = s1[j++];
+	j = 0;
+	while (s2[j])
+		dest[i++] = s2[j++];
+	dest[i] = '\0';
+	if (param == 0)
+		free((char *)s2);
+	if (param == 1)
+		free((char *)s1);
+	if (param == 2)
 	{
-		ft_lstadd_back(&new_lst, ft_lstnew(f(lst->content)));
-		lst = lst->next;
+		free((char *)s1);
+		free((char *)s2);
 	}
-	return (new_lst);
+	return (dest);
 }

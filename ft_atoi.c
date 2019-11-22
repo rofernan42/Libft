@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 15:19:30 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/14 11:00:05 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/11/20 10:49:12 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,8 @@ int	ft_atoi(const char *str)
 	|| str[i] == '\r' || str[i] == '\v')
 		i++;
 	if (str[i] == '-')
-	{
 		sign = -1;
-		i++;
-	}
-	else if (str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{

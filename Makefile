@@ -6,84 +6,96 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/15 12:07:06 by juligonz          #+#    #+#              #
-#    Updated: 2019/10/15 17:32:36 by rofernan         ###   ########.fr        #
+#    Updated: 2019/11/22 11:26:57 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		=	libft.a
+NAME 				=	libft.a
 
-PART1 		=	ft_memset.c				\
-				ft_bzero.c				\
-				ft_memcpy.c				\
-				ft_memccpy.c			\
-				ft_memmove.c			\
-				ft_memchr.c				\
-				ft_memcmp.c				\
-				ft_strlen.c				\
-				ft_isalpha.c			\
-				ft_isdigit.c			\
-				ft_isalnum.c			\
-				ft_isascii.c			\
-				ft_isprint.c			\
-				ft_toupper.c			\
-				ft_tolower.c			\
-				ft_strchr.c				\
-				ft_strrchr.c			\
-				ft_strncmp.c			\
-				ft_strlcpy.c			\
-				ft_strlcat.c			\
-				ft_strnstr.c			\
-				ft_atoi.c				\
-				ft_calloc.c				\
-				ft_strdup.c				\
+OBJS_PATH			=	./objs
 
-PART2		=	ft_substr.c				\
-				ft_strjoin.c			\
-				ft_strtrim.c			\
-				ft_split.c				\
-				ft_itoa.c				\
-				ft_strmapi.c			\
-				ft_putchar_fd.c			\
-				ft_putstr_fd.c			\
-				ft_putendl_fd.c			\
-				ft_putnbr_fd.c			\
+PART1 				=	ft_memset.c				\
+						ft_bzero.c				\
+						ft_memcpy.c				\
+						ft_memccpy.c			\
+						ft_memmove.c			\
+						ft_memchr.c				\
+						ft_memcmp.c				\
+						ft_strlen.c				\
+						ft_isalpha.c			\
+						ft_isdigit.c			\
+						ft_isalnum.c			\
+						ft_isascii.c			\
+						ft_isprint.c			\
+						ft_toupper.c			\
+						ft_tolower.c			\
+						ft_strchr.c				\
+						ft_strrchr.c			\
+						ft_strncmp.c			\
+						ft_strlcpy.c			\
+						ft_strlcat.c			\
+						ft_strnstr.c			\
+						ft_atoi.c				\
+						ft_calloc.c				\
+						ft_strdup.c				\
 
-BONUS		=	ft_lstnew_bonus.c		\
-				ft_lstadd_front_bonus.c \
-				ft_lstsize_bonus.c		\
-				ft_lstlast_bonus.c		\
-				ft_lstadd_back_bonus.c	\
-				ft_lstdelone_bonus.c	\
-				ft_lstclear_bonus.c		\
-				ft_lstiter_bonus.c		\
-				ft_lstmap_bonus.c		\
+PART2				=	ft_substr.c				\
+						ft_strjoin.c			\
+						ft_strtrim.c			\
+						ft_split.c				\
+						ft_itoa.c				\
+						ft_strmapi.c			\
+						ft_putchar_fd.c			\
+						ft_putstr_fd.c			\
+						ft_putendl_fd.c			\
+						ft_putnbr_fd.c			\
 
-SRCS		=	$(PART1) $(PART2)
-SRCS_BONUS	=	$(BONUS)
+ADDITIONAL			=	ft_strjoin_free.c		\
+						ft_strdel.c				\
 
-OBJ			=	$(SRCS:.c=.o)
-OBJ_BONUS	=	$(SRCS_BONUS:.c=.o)
+BONUS				=	ft_lstnew_bonus.c		\
+						ft_lstadd_front_bonus.c \
+						ft_lstsize_bonus.c		\
+						ft_lstlast_bonus.c		\
+						ft_lstadd_back_bonus.c	\
+						ft_lstdelone_bonus.c	\
+						ft_lstclear_bonus.c		\
+						ft_lstiter_bonus.c		\
+						ft_lstmap_bonus.c		\
 
-CC			=	gcc
+SRCS				=	$(PART1) $(PART2) $(ADDITIONAL)
+SRCS_BONUS			=	$(BONUS)
 
-CFLAGS		=	-Wall -Wextra -Werror -I./
+OBJS_NAME			=	$(SRCS:.c=.o)
+OBJS_N_BONUS		=	$(SRCS_BONUS:.c=.o)
 
-all:			$(NAME)
+OBJS				=	$(addprefix $(OBJS_PATH)/, $(OBJS_NAME))
+OBJS_BONUS			=	$(addprefix $(OBJS_PATH)/, $(OBJS_N_BONUS))
 
-bonus:			$(OBJ) $(OBJ_BONUS)
-				ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
-				ranlib $(NAME)
+CC					=	gcc
 
-$(NAME):		$(OBJ)
-				ar rc $(NAME) $(OBJ)
-				ranlib $(NAME)
+CFLAGS				=	-Wall -Wextra -Werror -I./
+
+all:					$(NAME)
+
+bonus:					$(OBJS) $(OBJS_BONUS)
+						ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
+						ranlib $(NAME)
+
+$(NAME):				$(OBJS)
+						ar rc $(NAME) $(OBJS)
+						ranlib $(NAME)
+
+$(OBJS_PATH)/%.o:		./%.c
+						@mkdir $(OBJS_PATH) 2> /dev/null || true
+						@$(CC) -o $@ -c $<
 
 clean:
-				rm -f $(OBJ) $(OBJ_BONUS)
+						rm -rf $(OBJS) $(OBJS_BONUS)
 
-fclean:			clean
-				rm -f $(NAME) $(NAME_BONUS)
+fclean:					clean
+						rm -rf ./objs $(NAME)
 
-re:				fclean all bonus
+re:						fclean all
 
-.PHONY:			clean fclean re all bonus
+.PHONY:					clean fclean re all bonus

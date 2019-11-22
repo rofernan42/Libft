@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 17:09:28 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/15 10:52:33 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/11/20 15:40:21 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,17 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	i = 0;
-	j = 0;
+	j = ft_strlen(s1);
 	k = 0;
 	if (!s1)
 		return (NULL);
 	while (check_set(s1[i], set))
 		i++;
-	if ((j = ft_strlen(&s1[i])) > 0)
+	while (check_set(s1[j - 1], set) && j > i)
 		j--;
-	while (check_set(s1[i + j], set))
-		j--;
-	j++;
-	if (!(str = malloc(sizeof(*str) * (j + 1))))
+	if (!(str = malloc(sizeof(*str) * (j - i + 1))))
 		return (NULL);
-	while (k < j)
+	while (i < j)
 		str[k++] = s1[i++];
 	str[k] = '\0';
 	return (str);

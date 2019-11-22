@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 14:06:50 by rofernan          #+#    #+#             */
-/*   Updated: 2019/10/10 14:16:55 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/11/20 11:39:54 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,64 +14,42 @@
 
 static	int		size_str(int n)
 {
-	int tmp;
 	int len;
 
-	tmp = n;
 	len = 0;
 	if (n == 0)
 		len = 1;
-	while (tmp)
+	while (n)
 	{
-		tmp = tmp / 10;
+		n = n / 10;
 		len++;
 	}
 	return (len);
 }
 
-static	char	*fill_str(long int n, int len, char *str)
-{
-	if (n < 0)
-	{
-		n = -n;
-		while (len)
-		{
-			str[len] = n % 10 + '0';
-			n = n / 10;
-			len--;
-		}
-	}
-	else
-	{
-		while (len)
-		{
-			str[len - 1] = n % 10 + '0';
-			n = n / 10;
-			len--;
-		}
-	}
-	return (str);
-}
-
 char			*ft_itoa(int n)
 {
-	int		len;
-	char	*str;
+	int				len;
+	unsigned int	tmp;
+	char			*str;
 
 	len = size_str(n);
+	tmp = n;
 	if (n < 0)
 	{
-		if (!(str = malloc(sizeof(*str) * (len + 2))))
-			return (NULL);
-		str[0] = '-';
-		str[len + 1] = '\0';
+		len++;
+		tmp = -tmp;
 	}
-	else
+	if (!(str = malloc(sizeof(*str) * (len + 1))))
+		return (NULL);
+	str[len] = '\0';
+	while (len)
 	{
-		if (!(str = malloc(sizeof(*str) * (len + 1))))
-			return (NULL);
-		str[len] = '\0';
+		str[len - 1] = tmp % 10 + '0';
+		tmp = tmp / 10;
+		len--;
 	}
-	str = fill_str(n, len, str);
+	if (n < 0)
+		str[0] = '-';
 	return (str);
 }
