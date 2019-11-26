@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:25:58 by rofernan          #+#    #+#             */
-/*   Updated: 2019/11/22 14:37:52 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/11/26 16:11:11 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+/*
+**================================= PART 1 =======================================
+*/
 void			*ft_memset(void *str, int c, size_t len);
 void			ft_bzero(void *str, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
@@ -42,6 +45,10 @@ char			*ft_strnstr(const char *str, const char *to_find, size_t len);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_strdup(const char *src);
+
+/*
+**================================= PART 2 =======================================
+*/
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
@@ -53,6 +60,21 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
+/*
+**=============================== ADDITIONAL =====================================
+*/
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 32
+#endif
+
+void			ft_strdel(char **str);
+char			*ft_strndup(const char *src, size_t n);
+char			*ft_strjoin_free(char const *s1, char const *s2, int param);
+int				get_next_line(int fd, char **line);
+
+/*
+**================================= BONUS ========================================
+*/
 typedef	struct	s_list
 {
 	void			*content;
