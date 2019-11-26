@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/15 12:07:06 by juligonz          #+#    #+#              #
-#    Updated: 2019/11/26 16:09:06 by rofernan         ###   ########.fr        #
+#    Updated: 2019/11/26 18:17:01 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,9 @@ ADDITIONAL			=	ft_strjoin_free.c		\
 						ft_strdel.c				\
 						ft_strndup.c			\
 						get_next_line.c			\
+						ft_atoi_base.c			\
+						ft_itoa_base.c			\
+						convert_base.c			\
 
 BONUS				=	ft_lstnew_bonus.c		\
 						ft_lstadd_front_bonus.c \

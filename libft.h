@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:25:58 by rofernan          #+#    #+#             */
-/*   Updated: 2019/11/26 16:11:11 by rofernan         ###   ########.fr       */
+/*   Updated: 2019/11/26 18:15:58 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdio.h>
 
 /*
-**================================= PART 1 =======================================
+**================================= PART 1 =====================================
 */
 void			*ft_memset(void *str, int c, size_t len);
 void			ft_bzero(void *str, size_t n);
@@ -47,7 +47,7 @@ void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_strdup(const char *src);
 
 /*
-**================================= PART 2 =======================================
+**================================= PART 2 =====================================
 */
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
@@ -61,7 +61,7 @@ void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
 /*
-**=============================== ADDITIONAL =====================================
+**=============================== ADDITIONAL ===================================
 */
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 32
@@ -71,9 +71,12 @@ void			ft_strdel(char **str);
 char			*ft_strndup(const char *src, size_t n);
 char			*ft_strjoin_free(char const *s1, char const *s2, int param);
 int				get_next_line(int fd, char **line);
+int				ft_atoi_base(char *str, char *base);
+char			*ft_itoa_base(unsigned int nbr, char *base);
+char			*convert_base(char *nbr, char *base_from, char *base_to);
 
 /*
-**================================= BONUS ========================================
+**================================= BONUS ======================================
 */
 typedef	struct	s_list
 {
