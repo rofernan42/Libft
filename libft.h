@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:25:58 by rofernan          #+#    #+#             */
-/*   Updated: 2020/01/02 11:45:36 by rofernan         ###   ########.fr       */
+/*   Updated: 2020/01/02 12:22:00 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ char			*convert_base(char *nbr, char *base_from, char *base_to);
 int				ft_factorial(int nb);
 double			ft_power(double nb, int power);
 double			ft_sqrt(double nb);
+void			ft_swap(void *a, void *b);
 
 /*
 **================================= BONUS ======================================
