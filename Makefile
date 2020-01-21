@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/15 12:07:06 by juligonz          #+#    #+#              #
-#    Updated: 2020/01/08 16:42:56 by rofernan         ###   ########.fr        #
+#    Updated: 2020/01/21 12:29:23 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,7 +96,7 @@ bonus:					$(OBJS) $(OBJS_BONUS)
 $(NAME):				$(OBJS)
 						ar rc $(NAME) $(OBJS)
 						ranlib $(NAME)
-						@echo "\033[32m=== COMPILATION OK ===\033[0m"
+						@echo "\033[32m=== COMPILATION LIBFT OK ===\033[0m"
 
 $(OBJS_PATH)/%.o:		./%.c
 						@mkdir $(OBJS_PATH) 2> /dev/null || true
@@ -105,10 +105,11 @@ $(OBJS_PATH)/%.o:		./%.c
 
 clean:
 						rm -rf $(OBJS) $(OBJS_BONUS)
+						@echo "\033[34m=== REPERTORY ./OBJS CLEANED ===\033[0m"
 
 fclean:					clean
 						rm -rf ./objs $(NAME)
-						@echo "\033[34m=== REPERTORY CLEANED ===\033[0m"
+						@echo "\033[34m=== REPERTORY LIBFT CLEANED ===\033[0m"
 
 re:						fclean all
 
