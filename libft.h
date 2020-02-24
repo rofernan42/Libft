@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:25:58 by rofernan          #+#    #+#             */
-/*   Updated: 2020/02/13 12:32:16 by rofernan         ###   ########.fr       */
+/*   Updated: 2020/02/24 18:00:57 by rofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ void			ft_swap_dbl(double *a, double *b);
 char			**ft_split_nl(char const *s);
 char			*ft_strlow(char *str);
 char			*ft_strup(char *str);
+int				ft_match(char *s1, char *s2);
+
 
 /*
 **================================= BONUS ======================================

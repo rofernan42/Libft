@@ -6,7 +6,7 @@
 #    By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/15 12:07:06 by rofernan          #+#    #+#              #
-#    Updated: 2020/02/13 11:20:43 by rofernan         ###   ########.fr        #
+#    Updated: 2020/02/24 18:00:33 by rofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,7 @@ ADDITIONAL			=	ft_strcmp.c				\
 						ft_split_nl.c			\
 						ft_strlow.c				\
 						ft_strup.c				\
+						ft_match.c
 
 BONUS				=	ft_lstnew_bonus.c		\
 						ft_lstadd_front_bonus.c \
