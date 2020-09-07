@@ -6,7 +6,7 @@
 /*   By: rofernan <rofernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 12:25:58 by rofernan          #+#    #+#             */
-/*   Updated: 2020/02/24 18:00:57 by rofernan         ###   ########.fr       */
+/*   Updated: 2020/09/07 13:20:42 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ char			**ft_split_nl(char const *s);
 char			*ft_strlow(char *str);
 char			*ft_strup(char *str);
 int				ft_match(char *s1, char *s2);
-
 
 /*
 **================================= BONUS ======================================
